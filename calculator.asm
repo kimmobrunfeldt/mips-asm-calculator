@@ -21,7 +21,7 @@
 #
 # calculation ::= term("+"|"-" term)*
 # term ::= number("*"|"/" number)*
-# number ::= ("0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|",")+
+# number ::= ("0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9")+ | "(" calculation ")"
 
 # Globals:
 # $s0 = Address to memory where operation string is located. Reading "cursor".
