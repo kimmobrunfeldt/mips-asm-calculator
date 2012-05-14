@@ -149,7 +149,7 @@ check_loop:	lb	$a0, ($t0)		# Read character to parameter
 		beq	$a0, 0, check_input_return  # Check if we are in the end of string.
 		jal 	is_illegal_char
 		beq	$v0, 1, check_input_return  # $v0 = 1, return that string is illegal
-		addi	$t0, $t0, 1		# Siirrytään seuraavaan merkkiin
+		addi	$t0, $t0, 1		# Next character
 		j	check_loop
 		
 	
@@ -341,7 +341,7 @@ atof_loop:	lb	$t1, ($s0)		# Read character
 		
 		addi	$t0, $t0, 1		# Increase length
 		addi	$s0, $s0, 1		# Next character
-		beq	$t3, 1, atof_loop	# Luettu merkki oli numero, luetaan seuraava
+		beq	$t3, 1, atof_loop	# Read character was a digit, read next character
 		
 		addi	$t0, $t0, -1		# Loop adds 1 times too much
 		move	$t1, $t0		# Length of the number to $t1
